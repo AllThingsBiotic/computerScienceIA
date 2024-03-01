@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: linear-gradient(to bottom, #001f3f, #000b1d);
+            margin: 0;
+            padding: 0;
+            color: #fffffff7; 
+        }
+
+        header {
+            background: url('nightSky.jpg') center center/cover; 
+            text-align: center;
+            padding: 100px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden; 
+        }
+
+        .left-column {
+            float: left;
+            width: 60%; 
+        }
+
+        .right-column {
+            float: right;
+            width: 40%; 
+            height: 100%; 
+            margin-top: 5px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0; 
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 0; 
+        }
+
+        .paragraph_container {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            color: #000000f7; 
+        }
+    </style>
+</head>
+<body>
+    {% include 'topnav.html' %}
+    {% include 'header.html' %}
+    <title>Restaurant</title>
+
+    <div class="container">
+        <div class="left-column">
+            <div class="paragraph_container">
+                <h2>Thank you for your reservation!</h2>
+                <div class="text-center mt-2 mb-4 paragraph-with-image">
+                        <p>Name: {{ data['name'] }}</p>
+                        <p>Phone: {{ data['phone'] }}</p>
+                        <p>Date: {{ data['date'] }}</p>
+                        <p>Time: {{ data['time'] }}</p> 
+                        <p>Party Size: {{ data['party-size'] }}</p> 
+                </div>
+                <div>
+                    See you soon!
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+
+</body>
+</html>
+
+

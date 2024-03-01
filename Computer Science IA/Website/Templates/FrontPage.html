@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- Corrected the attribute value -->
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: linear-gradient(to bottom, #001f3f, #000b1d);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: url('nightSky.jpg') center center no-repeat;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-column {
+            float: left;
+            width: 40%;
+        }
+
+        .right-column {
+            height: 60px;
+            width: 60%;
+            float: right;
+            position: static;
+            margin-top: 5px;
+        }
+        .additional-content {
+            padding: 0 200px; /* Add some padding to columns for spacing */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        #reservation-form input[type="submit"] {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .paragraph-with-image {
+            overflow: hidden;
+        }
+
+        .paragraph-with-image img {
+            float: right;
+            margin-left: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+    <title>Restarurant front page</title>
+</head>
+<body>
+
+    {% include 'topnav.html' %}
+    {% include 'header.html' %}
+
+    <div class="container">
+        <div class="left-column">
+            <div class="paragraph_container">
+                <h2>About Us</h2>
+                <div class="text-center mt-2 mb-4 paragraph-with-image">
+                        <p>We are a small restaurant located at the heart of Somewhere,
+                            and we are dedicated to serving the community of Somewhere with delicious food.</p>
+                        <img src="Image.jpg" alt="About Us Image">
+                </div>
+
+                <h2>Buffet</h2>
+                <div class="text-center mt-2 mb-4 paragraph-with-image">
+                    <p>With over 20 different dishes, Restaurant offers a multitude of options to choose from and provides a mix of Asian and Western and hambarbar dishes.
+                        Combined with a dessert, soup, and vegetable bar, you can be sure that restaurant has everything you need
+                        to have an enjoyable dining experience.</p>
+                    <img src="Image.jpg" alt="Buffet Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="additional-content text-center">
+                <h2>Hungry?</h2>
+                <p>Here is our skipthedishes page</p>
+                <a class="active" target="_blank" href="https://www.skipthedishes.com/">
+                    <button>Click me</button>
+                </a>
+                <p>
+                    Or call us at 999-999-9999 for takeout or delivery
+                </p>
+            </div>
+        </div>
+
+        <div style="clear: both;"></div>
+        
+        <h2>Reservations</h2>
+
+        <p>Make a reservation:</p>
+
+            <form action="/submit_reserve" method="post">
+
+                <div class="mb-2">
+                    <label for="name">Name:</label> <br>
+                    <input type="text" name="name" required>
+                </div>
+
+                <div class="mb-2">
+                    <label for="phone">Phone number:</label> <br>
+                    <input type="tel" name="phone" required>
+                </div>
+
+                <div class="mb-2">
+                    <label for="date">Date:</label> <br>
+                    <input type="date" name="date" required>
+                </div>
+
+                <div class="mb-2">
+                    <label for="time">Time:</label> <br>
+                    <input type="time" name="time" required>
+                </div>
+
+                <div class="mb-2">
+                    <label for="party-size">Party Size:</label> <br>
+                    <input type="number" name="party-size" required>
+                </div>
+
+                <div>
+                    <input type="submit">
+                </div>
+
+            </form>
+        </div>

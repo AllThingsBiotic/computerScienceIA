@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Google Map</title>
+</head>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif,;
+            background: linear-gradient(to bottom, #001f3f, #000b1d);
+            margin: 10px;
+            padding: 10px;
+        }
+
+        header {
+            background: url('nightSky.jpg') center center no-repeat;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+        .text-box {
+            margin-top: 20px; /* Adjust the margin as needed */
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.128);
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #map-container {
+            width: 500px;
+            height: 350px;
+            background-color: #fff; /* Background color for the map container */
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .paragraph-with-image {
+            overflow: hidden;
+        }
+
+        .paragraph-with-image img {
+            float: right;
+            margin-left: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+
+
+<body>
+    {% include 'topnav.html' %}
+    {% include 'header.html' %}
+    <div class="container">
+        <div id="map-container">
+            <iframe
+                src="https://www.google.com/maps/d/embed?mid=1CTwC09n52uzrTDRp7cBxjC6O2sQ&hl=en_US&ehbc=2E312F"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <div class=".text-box">
+
+            <h2>Location Details</h2>
+            <div>Address: 999 Valley Vally NW, </div>
+            <div>Somewhere, ZQ 90012</div>   
+            <div>Phone: (999) 999-9999</div>
+            <div>Hours: 11am - 8pm (7 days a week)</div>
+        </div>
+
+
+    </div>
+</body>
+</html>
